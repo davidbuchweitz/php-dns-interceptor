@@ -21,7 +21,7 @@
 class DNSProxy
 {
 	# Address to bind to
-	public $address = "0.0.0.0";
+	public $address = "127.0.0.1";
 
 	# Port to bind to
 	public $port = 53;
@@ -95,9 +95,6 @@ class DNSProxy
 
 			# Move up by two bytes
 			$i+=2;
-
-			# Check record type
-			$type = array_search((string)ord($tmp[$i]), $this->types);
 
 			$this->debug("Query: $query", false);
 
